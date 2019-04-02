@@ -20,7 +20,8 @@
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".activity.OtherActivity"></activity>
+        <activity android:name=".activity.OtherActivity" />
+        <activity android:name=".activity.EntranceActivity"></activity>
     </application>
 
 </manifest>

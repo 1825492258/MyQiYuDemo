@@ -28,8 +28,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         findViews();
-        parseIntent();
-
         // 监听未读的数量
         Unicorn.addUnreadCountChangeListener(mUnreadCountListener,true);
         updateUnreadCount(Unicorn.getUnreadCount());
@@ -54,13 +52,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    protected void onNewIntent(Intent intent) {
-        super.onNewIntent(intent);
-        Log.i("jiejie", "-----onNewIntent--------");
-        setIntent(intent);
-        parseIntent();
-    }
 
     public static void consultService(final Context context, ProductDetail productDetail) {
         // 启动聊天界面
@@ -73,17 +64,6 @@ public class MainActivity extends AppCompatActivity {
         Unicorn.openServiceActivity(context, title, source);
     }
 
-    /**
-     * 如果不想要状态栏消息提示 可以不要
-     */
-    private void parseIntent() {
-        Intent intent = getIntent();
-        if (intent.hasExtra(NimIntent.EXTRA_NOTIFY_CONTENT)) {
-            consultService(this, null);
-            // 最好将intent清掉，以免从堆栈恢复时又打开客服窗口
-            setIntent(new Intent());
-        }
-    }
 
     private UnreadCountChangeListener mUnreadCountListener = new UnreadCountChangeListener() {
         @Override
