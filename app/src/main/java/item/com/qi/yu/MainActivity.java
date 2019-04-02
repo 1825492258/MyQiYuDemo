@@ -52,7 +52,11 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
+    /**
+     *
+     * @param context
+     * @param productDetail
+     */
     public static void consultService(final Context context, ProductDetail productDetail) {
         // 启动聊天界面
         String title = "聊天窗口的标题";
