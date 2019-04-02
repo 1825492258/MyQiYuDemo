@@ -9,7 +9,7 @@ import com.qiyukf.nimlib.sdk.NimIntent;
 import item.com.qi.yu.MainActivity;
 
 /**
- *
+ * 七鱼入口
  */
 public class EntranceActivity extends AppCompatActivity {
 
